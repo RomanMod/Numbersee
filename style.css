@@ -1,0 +1,159 @@
+/* Общие стили */
+body {
+    font-family: sans-serif;
+    background-color: var(--tg-theme-bg-color, #ffffff); /* Используем цвет фона Telegram */
+    color: var(--tg-theme-text-color, #000000); /* Используем цвет текста Telegram */
+    margin: 0;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Выравнивание по верху */
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: var(--tg-theme-secondary-bg-color, #f0f0f0);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px; /* Ограничиваем ширину для удобства */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    color: var(--tg-theme-text-color, #333);
+}
+
+h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Стили для ввода кода */
+.game-area {
+    margin-bottom: 20px;
+}
+
+.code-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Расстояние между инпутами */
+    margin: 15px 0;
+}
+
+.digit-input {
+    width: 40px; /* Ширина инпута */
+    height: 50px; /* Высота инпута */
+    font-size: 1.8em; /* Размер цифры */
+    text-align: center;
+    border: 1px solid var(--tg-theme-hint-color, #ccc);
+    border-radius: 5px;
+    background-color: var(--tg-theme-bg-color, #fff);
+    color: var(--tg-theme-text-color, #000);
+    /* Убираем стрелки в Chrome, Safari, Edge, Opera */
+    -webkit-appearance: none;
+    margin: 0;
+    /* Убираем стрелки в Firefox */
+    -moz-appearance: textfield;
+}
+
+/* Убираем стрелки для type=number (более надежный способ) */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+/* Стили для кнопок */
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: var(--tg-theme-button-color, #007bff); /* Цвет кнопки Telegram */
+    color: var(--tg-theme-button-text-color, #ffffff); /* Цвет текста кнопки Telegram */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover:not(:disabled) {
+    opacity: 0.9;
+}
+
+button:disabled {
+    background-color: var(--tg-theme-hint-color, #cccccc);
+    cursor: not-allowed;
+}
+
+/* Информационные блоки */
+.game-info {
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    color: var(--tg-theme-hint-color, #555);
+}
+
+#feedback {
+    margin-top: 15px;
+    min-height: 40px; /* Чтобы контейнер не прыгал */
+    font-weight: bold;
+}
+
+.feedback-item {
+    margin-bottom: 5px;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.correct-position {
+    color: #28a745; /* Зеленый */
+    /* background-color: #e9f7ec; */
+}
+
+.correct-digit {
+     color: #ffc107; /* Желтый */
+     /* background-color: #fff8e1; */
+}
+
+.incorrect {
+    color: #dc3545; /* Красный */
+    /* background-color: #f8d7da; */
+}
+
+
+/* Сообщения об окончании игры */
+.message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.win-message {
+    background-color: #d4edda; /* Светло-зеленый */
+    color: #155724; /* Темно-зеленый */
+    border: 1px solid #c3e6cb;
+}
+
+.lose-message {
+    background-color: #f8d7da; /* Светло-красный */
+    color: #721c24; /* Темно-красный */
+    border: 1px solid #f5c6cb;
+}
+
+#new-game-button {
+    margin-top: 15px;
+    background-color: var(--tg-theme-button-color, #6c757d); /* Серый или цвет кнопки ТГ */
+      }
