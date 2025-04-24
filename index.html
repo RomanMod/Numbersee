@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Угадай Код</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем Telegram Web Apps API -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 id="welcome-message">Загрузка...</h1>
+        <h2>Подбери код от замка!</h2>
+
+        <!-- Блок выбора сложности (пока просто заголовок, т.к. сложность фиксирована) -->
+        <div class="difficulty-selector" style="display: none;"> <!-- Скрываем, пока не используется -->
+             <label for="difficulty">Сложность:</label>
+             <select id="difficulty">
+                 <option value="4" selected>4 цифры (Стандарт)</option>
+                 <!-- Можно добавить другие опции в будущем -->
+             </select>
+         </div>
+
+        <div class="game-area">
+            <p>Введи 4-значный код:</p>
+            <div class="code-inputs">
+                <input type="number" id="digit1" class="digit-input" min="0" max="9" required>
+                <input type="number" id="digit2" class="digit-input" min="0" max="9" required>
+                <input type="number" id="digit3" class="digit-input" min="0" max="9" required>
+                <input type="number" id="digit4" class="digit-input" min="0" max="9" required>
+            </div>
+            <button id="submit-guess">Проверить</button>
+        </div>
+
+        <div class="game-info">
+            <p>Осталось попыток: <span id="attempts-left">100</span></p>
+             <!-- Убрал отображение кода для отладки -->
+            <!-- <p>Секретный код (для отладки): <span id="secret-code-debug">????</span></p> -->
+        </div>
+
+        <div id="feedback">
+            <!-- Сюда будут выводиться подсказки -->
+        </div>
+
+        <div id="game-over-message" class="message" style="display: none;">
+             <!-- Сообщение о конце игры -->
+        </div>
+
+         <button id="new-game-button" style="display: none;">Новая игра</button>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+  </html>
